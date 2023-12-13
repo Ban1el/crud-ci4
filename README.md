@@ -7,3 +7,4 @@
 ✔️ Validation
 ✔️ Export to Excel
 ✔️ CI4 View Layouts
+✔️ CSRF Protection

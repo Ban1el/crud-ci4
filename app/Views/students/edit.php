@@ -13,6 +13,7 @@
                 <div class="card-body">
                     <form action="<?= base_url('students/modify_student/' . $studentData['student_id']); ?>" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="_method" value="PUT">
+                        <?= csrf_field() ?>
 
                         <div class="form-group mb-3">
                             <label for="id-field" class="form-label">ID</label>

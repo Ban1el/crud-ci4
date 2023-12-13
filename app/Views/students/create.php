@@ -13,6 +13,8 @@
                 <div class="card-body">
                     <form action="<?= base_url('students/add_student'); ?>" method="post" enctype="multipart/form-data">
 
+                    <?= csrf_field() ?>
+
                         <div class="form-group mb-3">
                             <label for="id-field" class="form-label">ID</label>
                             <input type="text" class="form-control" id="id-field" value="<?= isset($student_id) ?  $student_id : '' ?>" name="student_id" readonly>

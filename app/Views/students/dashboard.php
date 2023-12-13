@@ -9,6 +9,7 @@
             <div>
                 <form action="<?= base_url('students/export_to_excel') ?>" method="post">
                     <a href="<?= base_url("students/create_student") ?>" class="btn btn-sm btn-primary">Add students</a>
+                    <?= csrf_field() ?>
                     <input type="submit" class="btn btn-sm btn-success float-end" value="Export">
                 </form>
             </div>
@@ -58,6 +59,7 @@
                                     <a href="<?= base_url('students/edit_student/' . $row['student_id']) ?>" class="btn btn-sm btn-success">Edit</a>
                                     <form action="<?= base_url('students/delete_student/' . $row['student_id']) ?>" method="post">
                                         <input type="hidden" name="_method" value="DELETE">
+                                        <?= csrf_field() ?>
                                         <input type="submit" class="btn btn-sm btn-danger delete-btn" value="Delete">
                                     </form>
                                 </td>
@@ -114,7 +116,6 @@
             $('#deleteConfirmModal').modal('show');
 
             $('#confirm-delete').click(function() {
-
                 form.submit();
             });
         });
