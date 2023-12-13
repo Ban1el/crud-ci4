@@ -1,6 +1,7 @@
 <?= $this->extend('layouts/frontend'); ?>
 <?= $this->section('content'); ?>
 
+<?= $this->include('inc/navbar'); ?>
 
 <div class="container mt-5">
     <div class="card">
