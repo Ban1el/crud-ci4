@@ -15,3 +15,5 @@ $routes->get('students/edit_student/(:segment)', 'StudentController::edit_studen
 $routes->put('students/modify_student/(:segment)', 'StudentController::modify_student/$1');
 $routes->delete('students/delete_student/(:segment)', 'StudentController::delete_student/$1');
 $routes->post('students/export_to_excel', 'StudentController::export_to_excel');
+$routes->get('register', 'RegisterController::index');
+$routes->post('register_user', 'RegisterController::register_user');
