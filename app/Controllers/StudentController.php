@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\StudentModel;
+use App\models\UserModel;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -15,6 +16,7 @@ class StudentController extends BaseController
     public function __construct()
     {
         $this->studentModel = new StudentModel();
+        $this->userModel = new UserModel();
         $this->session = \Config\Services::session();
     }
 
@@ -24,6 +26,11 @@ class StudentController extends BaseController
             'title' => 'Student Dashboard',
             'student' => $this->studentModel->findAll(),
         ];
+
+        if (!empty($this->session->has('user_id'))) {
+            $user_data = $this->userModel->find($this->session->get('user_id'));
+            $data['user_name'] = $user_data['user_username'];
+        }
 
         return view("students/dashboard",  $data);
     }

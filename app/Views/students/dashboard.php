@@ -3,7 +3,14 @@
 
 <?= $this->include('inc/navbar'); ?>
 
-<div class="container mt-5">
+<div class="container mt-3">
+
+    <div class="alert alert-light" role="alert">
+        <?php if (isset($user_name)) : ?>
+            <h3>Hello! <?= $user_name ?></h3>
+        <?php endif; ?>
+    </div>
+
     <div class="card">
         <div class="card-header">
             <h5 class="mb-3">Students</h5>

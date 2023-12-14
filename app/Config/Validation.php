@@ -8,6 +8,7 @@ use CodeIgniter\Validation\StrictRules\FileRules;
 use CodeIgniter\Validation\StrictRules\FormatRules;
 use CodeIgniter\Validation\StrictRules\Rules;
 use App\Validation\CreateStudent;
+use App\Validation\LoginValidation;
 
 class Validation extends BaseConfig
 {
@@ -27,6 +28,7 @@ class Validation extends BaseConfig
         FileRules::class,
         CreditCardRules::class,
         CreateStudent::class,
+        LoginValidation::class,
     ];
 
     /**

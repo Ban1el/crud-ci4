@@ -17,3 +17,5 @@ $routes->delete('students/delete_student/(:segment)', 'StudentController::delete
 $routes->post('students/export_to_excel', 'StudentController::export_to_excel');
 $routes->get('register', 'RegisterController::index');
 $routes->post('register_user', 'RegisterController::register_user');
+$routes->get('login', 'LoginController::index');
+$routes->post('login_user', 'LoginController::login_user');

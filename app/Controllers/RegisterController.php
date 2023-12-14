@@ -47,8 +47,8 @@ class RegisterController extends BaseController
             return view("students/register", $data);
         } else {
 
-            $password = strval($this->request->getPost('password'));
-            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $password = $this->request->getPost('password');
+            $hashed_password = password_hash(strval($password), PASSWORD_DEFAULT);
 
             $inputData = [
                 'user_id' => $this->user_model->generate_user_id(),
