@@ -17,7 +17,8 @@
                 </li>
 
                 <li class="nav-item">
-                    <form action="<?= base_url('blogs/logout') ?>" method="post">
+                    <form action="<?= base_url('logout') ?>" method="post">
+                        <?= csrf_field() ?>
                         <input type="submit" value="Logout" class="nav-link" aria-current="page">
                     </form>
                 </li>

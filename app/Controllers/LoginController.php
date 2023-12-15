@@ -51,4 +51,10 @@ class LoginController extends BaseController
             return redirect('students/dashboard');
         }
     }
+
+    public function logout()
+    {
+        $this->session->remove('user_id');
+        return redirect('login');
+    }
 }

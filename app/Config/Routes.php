@@ -15,6 +15,7 @@ $routes->put('students/modify_student/(:segment)', 'StudentController::modify_st
 $routes->delete('students/delete_student/(:segment)', 'StudentController::delete_student/$1');
 $routes->post('students/export_to_excel', 'StudentController::export_to_excel');
 $routes->post('register_user', 'RegisterController::register_user');
+$routes->post('logout', 'LoginController::logout');
 
 $routes->group('', ['filter' => 'LoginCheck'], function ($routes) {
     $routes->get('students/dashboard', 'StudentController::index');
